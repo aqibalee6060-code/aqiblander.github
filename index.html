@@ -4,38 +4,103 @@
   <title>My First Website</title>
   <style>
     body {
-      background: linear-gradient(45deg, #ff0000, #0000ff);
+      background: linear-gradient(45deg, #1a1a2e, #16213e, #0f3460);
       background-size: 400% 400%;
-      animation: gradientBG 5s ease infinite;
+      animation: gradientBG 8s ease infinite;
       margin: 0;
       padding: 20px;
       text-align: center;
+      min-height: 100vh;
+      transition: background 0.5s ease;
     }
     
     @keyframes gradientBG {
       0% { background-position: 0% 50%; }
-      50% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
     
     h1 {
-      color: #purple;
-      text-shadow: 2px 2px 4px white;
+      color: #e94560;
+      text-shadow: 2px 2px 4px black;
+      font-size: 50px;
+      transition: all 0.3s ease;
+    }
+    
+    h1:hover {
+      color: #f9b17a;
+      text-shadow: 2px 2px 8px #000;
+      transform: scale(1.1);
+    }
+    
+    .main-text {
+      color: #f9b17a;
+      font-size: 80px;
+      text-shadow: 2px 2px 4px black;
+      transition: all 0.3s ease;
+    }
+    
+    .main-text:hover {
+      color: #e94560;
+      text-shadow: 2px 2px 8px #000;
+      transform: scale(1.05);
+    }
+    
+    .link-text {
+      color: #ffffff;
+      font-size: 80px;
+      text-shadow: 2px 2px 4px black;
+      text-decoration: none;
+      display: block;
+      margin: 30px 0;
+      transition: all 0.3s ease;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    
+    .link-text:hover {
+      background: rgba(233, 69, 96, 0.3);
+      color: #f9b17a;
+      transform: scale(1.1);
+      text-shadow: 2px 2px 8px #000;
+      box-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
+    }
+    
+    /* Special hover effects for different links */
+    a:nth-child(1) .link-text:hover {
+      background: rgba(249, 177, 122, 0.3);
+      color: #e94560;
+      box-shadow: 0 0 20px rgba(249, 177, 122, 0.5);
+    }
+    
+    a:nth-child(2) .link-text:hover {
+      background: rgba(101, 193, 221, 0.3);
+      color: #65c1dd;
+      box-shadow: 0 0 20px rgba(101, 193, 221, 0.5);
+    }
+    
+    /* Body background color change on different hovers */
+    h1:hover ~ body {
+      background: linear-gradient(45deg, #e94560, #f9b17a);
+    }
+    
+    .main-text:hover ~ body {
+      background: linear-gradient(45deg, #0f3460, #65c1dd);
     }
   </style>
 </head>
 <body>
   <h1>Welcome Mir Murtaza!</h1>
-  <p style="color:YELLOW; font-size:80px; text-shadow: 2px 2px 4px black;">Ye meri pehli website hai HTML me bani 😎</p>
+  <p class="main-text">Ye meri pehli website hai HTML me bani 😎</p>
   
   <!-- Link that opens image in new tab -->
-  <a href="https://plus.unsplash.com/premium_photo-1664299631876-f143dc691c4d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bW9ua2V5fGVufDB8fDB8fHww&fm=jpg&q=10&w=700" target="_blank">
-    <p style="font-size:80px; color: white; text-shadow: 2px 2px 4px black;">Monkey</p>
+  <a href="https://plus.unsplash.com/premium_photo-1664299631876-f143dc691c4d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bW9ua2V5fGVufDB8fDB8fHww&fm=jpg&q=10&w=700" target="_blank">
+    <p class="link-text">Monkey 🐵</p>
   </a>
   
   <!-- Link that opens image in new tab -->
   <a href="https://i.sstatic.net/etJFB.jpgquality=10000" target="_blank">
-    <p style="font-size:80px; color: white; text-shadow: 2px 2px 4px black;">Loop</p>
+    <p class="link-text">Loop 🔄</p>
   </a>
 </body>
 </html>
