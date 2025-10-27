@@ -1,110 +1,204 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My First Website</title>
-  <style>
-    body {
-      background: linear-gradient(45deg, #1a1a2e, #16213e, #0f3460);
-      background-size: 400% 400%;
-      animation: gradientBG 8s ease infinite;
-      margin: 0;
-      padding: 20px;
-      text-align: center;
-      min-height: 100vh;
-      transition: background 0.5s ease;
-    }
-    
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    
-    h1 {
-      color: #e94560;
-      text-shadow: 2px 2px 4px black;
-      font-size: 50px;
-      transition: all 0.3s ease;
-    }
-    
-    h1:hover {
-      color: #f9b17a;
-      text-shadow: 2px 2px 8px #000;
-      transform: scale(1.1);
-    }
-    
-    .main-text {
-      color: #f9b17a;
-      font-size: 80px;
-      text-shadow: 2px 2px 4px black;
-      transition: all 0.3s ease;
-    }
-    
-    .main-text:hover {
-      color: #e94560;
-      text-shadow: 2px 2px 8px #000;
-      transform: scale(1.05);
-    }
-    
-    .link-text {
-      color: #ffffff;
-      font-size: 80px;
-      text-shadow: 2px 2px 4px black;
-      text-decoration: none;
-      display: block;
-      margin: 30px 0;
-      transition: all 0.3s ease;
-      padding: 10px;
-      border-radius: 10px;
-    }
-    
-    .link-text:hover {
-      background: rgba(233, 69, 96, 0.3);
-      color: #f9b17a;
-      transform: scale(1.1);
-      text-shadow: 2px 2px 8px #000;
-      box-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
-    }
-    
-    /* Special hover effects for different links */
-    a:nth-child(1) .link-text:hover {
-      background: rgba(249, 177, 122, 0.3);
-      color: #e94560;
-      box-shadow: 0 0 20px rgba(249, 177, 122, 0.5);
-    }
-    
-    a:nth-child(2) .link-text:hover {
-      background: rgba(101, 193, 221, 0.3);
-      color: #65c1dd;
-      box-shadow: 0 0 20px rgba(101, 193, 221, 0.5);
-    }
-    
-    /* Body background color change on different hovers */
-    h1:hover ~ body {
-      background: linear-gradient(45deg, #e94560, #f9b17a);
-    }
-    
-    .main-text:hover ~ body {
-      background: linear-gradient(45deg, #0f3460, #65c1dd);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mir Murtaza - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .main-title {
+            font-size: 4rem;
+            color: white;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes titleGlow {
+            from { filter: hue-rotate(0deg); }
+            to { filter: hue-rotate(360deg); }
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 30px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.2);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover .card-image {
+            transform: scale(1.05);
+        }
+
+        .card-title {
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        }
+
+        .card-description {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .feature-section {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .feature-title {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-title { font-size: 2.5rem; }
+            .gallery { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
-  <h1>Welcome Mir Murtaza!</h1>
-  <p class="main-text">Ye meri pehli website hai HTML me bani 😎</p>
-  
-  <!-- Link that opens image in new tab -->
-  <a href="https://plus.unsplash.com/premium_photo-1664299631876-f143dc691c4d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bW9ua2V5fGVufDB8fDB8fHww&fm=jpg&q=10&w=700" target="_blank">
-    <p class="link-text">Monkey 🐵</p>
-  </a>
-  
-  <!-- Link that opens image in new tab -->
-  <a href="https://i.sstatic.net/etJFB.jpgquality=10000" target="_blank">
-    <p class="link-text">Loop 🔄</p>
-  </a>
+    <div class="container">
+        <header class="header floating">
+            <h1 class="main-title">Mir Murtaza</h1>
+            <p class="subtitle">Web Developer & Designer</p>
+        </header>
+
+        <div class="gallery">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bW91bnRhaW5zfGVufDB8fDB8fHww&w=1000&q=80" 
+                     alt="Beautiful Mountains" class="card-image">
+                <h3 class="card-title">Nature Photography</h3>
+                <p class="card-description">Stunning mountain landscapes and natural beauty from around the world.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVzaWN8ZW58MHx8MHx8fDA%3D&w=1000&q=80" 
+                     alt="Music Studio" class="card-image">
+                <h3 class="card-title">Music Production</h3>
+                <p class="card-description">Professional music studio setup and audio engineering projects.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y29kaW5nfGVufDB8fDB8fHww&w=1000&q=80" 
+                     alt="Coding Setup" class="card-image">
+                <h3 class="card-title">Web Development</h3>
+                <p class="card-description">Modern web development projects using latest technologies and frameworks.</p>
+            </div>
+        </div>
+
+        <div class="feature-section">
+            <h2 class="feature-title">Ready to Start Your Project?</h2>
+            <a href="#" class="btn">Get In Touch</a>
+        </div>
+    </div>
+
+    <script>
+        // Add interactive effects
+        document.addEventListener('mousemove', (e) => {
+            const cards = document.querySelectorAll('.card');
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+            
+            cards.forEach((card, index) => {
+                const offsetX = (mouseX - 0.5) * 20;
+                const offsetY = (mouseY - 0.5) * 20;
+                card.style.transform = `perspective(1000px) rotateY(${offsetX}deg) rotateX(${-offsetY}deg) translateY(-10px)`;
+            });
+        });
+    </script>
 </body>
 </html>
-
-
-
-
