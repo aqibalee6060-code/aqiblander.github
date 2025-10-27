@@ -2,16 +2,41 @@
 <html>
 <head>
   <title>My First Website</title>
+  <style>
+    body {
+      background: linear-gradient(45deg, #ff0000, #0000ff);
+      background-size: 400% 400%;
+      animation: gradientBG 5s ease infinite;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    h1 {
+      color: white;
+      text-shadow: 2px 2px 4px black;
+    }
+  </style>
 </head>
 <body>
   <h1>Welcome Mir Murtaza!</h1>
-  <p style="color:RED; font-size:80px;">Ye meri pehli website hai HTML me bani 😎</p>
-   <!-- Link that opens image in new tab -->
-    <a href="https://plus.unsplash.com/premium_photo-1664299631876-f143dc691c4d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bW9ua2V5fGVufDB8fDB8fHww&fm=jpg&q=10&w=700" target="_blank">  <p style="font-size:80px;">
-        Monkey </p>
- <!-- Link that opens image in new tab -->
-    <a href="https://i.sstatic.net/etJFB.jpgquality=10000" target="_blank">  <p style="font-size:80px;">
-        loop  </div>
+  <p style="color:YELLOW; font-size:80px; text-shadow: 2px 2px 4px black;">Ye meri pehli website hai HTML me bani 😎</p>
+  
+  <!-- Link that opens image in new tab -->
+  <a href="https://plus.unsplash.com/premium_photo-1664299631876-f143dc691c4d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bW9ua2V5fGVufDB8fDB8fHww&fm=jpg&q=10&w=700" target="_blank">
+    <p style="font-size:80px; color: white; text-shadow: 2px 2px 4px black;">Monkey</p>
+  </a>
+  
+  <!-- Link that opens image in new tab -->
+  <a href="https://i.sstatic.net/etJFB.jpgquality=10000" target="_blank">
+    <p style="font-size:80px; color: white; text-shadow: 2px 2px 4px black;">Loop</p>
+  </a>
 </body>
 </html>
 
